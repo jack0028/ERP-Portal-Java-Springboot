@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice 2</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid rgb(254, 254, 254);
+            border-radius: 10px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: right;
+            background-color: #5639ca;
+            padding: 20px;
+            color: white;
+            text-align: right;
+        }
+
+        .header h1 {
+            margin-left: 18pc;
+            margin-bottom: 0;
+            margin-top: 0;
+            text-align: right;
+            font-size: 36px;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+
+        .business-info,
+        .bill-info,
+        .shipping-info,
+        .table-container,
+        .bank-details,
+        .summary {
+            margin-top: 20px;
+        }
+
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-column {
+            width: 45%;
+        }
+
+        .info-column label {
+            font-weight: bold;
+        }
+
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-container table,
+        .table-container th,
+        .table-container td {
+            border: 1px solid #5639ca;
+        }
+
+        .table-container th, .table-container td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .table-container th {
+            background-color: #5639ca;
+            color: white;
+        }
+
+        .summary {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .left-summary {
+            width: 47%;
+        }
+
+        .right-summary {
+            width: 53%;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .summary-table td {
+            padding: 5px;
+            border: 1px solid #5639ca;
+            font-size: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: #333;
+        }
+
+        .footer img {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>Sales Bill</h1>
+  </div>
+
+  <div class="info-section">
+    <div class="info-column">
+      <p><label>Business Name:</label> <span>Zylker Industries</span></p>
+      <p><label>Address:</label> <span>14B Northern Street, NY, USA</span></p>
+      <p><label>Phone Number:</label> <span>779839231</span></p>
+    </div>
+    <div class="info-column">
+      <p><label>GSTIN No:</label> <span>123456789012345</span></p>
+      <p><label>Invoice no:</label> <span id="invoiceNo"></span></p>
+      <p><label>State:</label> <span>Newyork</span></p>
+    </div>
+    <div>
+      <img src="logo.jpg" alt="Logo" class="logo">
+    </div>
+  </div>
+
+  <div class="info-section">
+    <div class="info-column">
+      <p><label>Name:</label> <span id="name"></span></p>
+      <p><label>Address:</label> <span id="address"></span></p>
+      <p><label>Phone No:</label> <span id="mblno"></span></p>
+      <p><label>GSTIN:</label> <span id="gstno"></span></p>
+      <p><label>State:</label> <span id="state"></span></p>
+    </div>
+    <div class="info-column">
+      <p><label>Name:</label> <span id="sname"></span></p>
+      <p><label>Address:</label> <span id="address"></span></p>
+      <p><label>Phone No:</label> <span id="mblno"></span></p>
+      <p><label>GSTIN:</label> <span id="gstno"></span></p>
+      <p><label>State:</label> <span id="state"></span></p>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Goods Description</th>
+          <th>QTY</th>
+          <th>MRP</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody id="itemsTable">
+        <!-- Table rows will be injected by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="summary">
+    <div class="left-summary">
+      <table class="summary-table">
+        <tr>
+          <td>Amount in Words: <span id="amountInWords"></span></td>
+        </tr>
+        <tr><td>Bank Details</td></tr>
+        <tr><td>Account Name: <span id="accountName"></span></td></tr>
+        <tr><td>Account Number: <span id="accountNumber"></span></td></tr>
+        <tr><td>IFSC Code: <span id="ifscCode"></span></td></tr>
+      </table>
+    </div>
+    <div class="right-summary">
+      <table class="summary-table">
+        <tr><td>Discount:</td><td id="discount"></td></tr>
+        <tr><td>SGST:</td><td id="sgst"></td></tr>
+        <tr><td>CGST:</td><td id="cgst"></td></tr>
+        <tr><td><strong>Balance</strong></td><td><strong id="balance"></strong></td></tr>
+        <tr><td><strong>Total:</strong></td><td><strong id="total"></strong></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Create professional invoices using myBillBook</p>
+    <img src="google-play-badge.png" alt="Google Play">
+  </div>
+
+</div>
+
+</body>
+</html>

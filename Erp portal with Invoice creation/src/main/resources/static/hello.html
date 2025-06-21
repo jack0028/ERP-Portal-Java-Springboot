@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfff5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 4pc auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ec7019;
+            margin-bottom: 10px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .company-details h4 {
+            color: #c01600;
+            margin-top: -4px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .company-details p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .rightdetails h1 {
+            color: #c01600;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: bold;
+            color: #c01600;
+        }
+
+        .from h4, .to h4 {
+            margin-bottom: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .from p, .to p {
+            margin: 2px 0;
+            font-size: 12px;
+        }
+
+        .invoice-info {
+            text-align: right;
+            font-size: 14px;
+            margin-top: -30px;
+        }
+
+        .invoice-table th {
+            background-color: #c01600;
+            font-weight: bold;
+            color: #fdfdfd;
+        }
+
+        .total-summary {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .total-summary .label {
+            color: rgb(0, 0, 0);
+        }
+
+        .total-summary tr:last-child {
+            background-color: #c01600;
+            color: #fff;
+        }
+
+        .notes, .terms {
+            font-size: 14px;
+        }
+
+        .terms {
+            margin-top: 2pc;
+            margin-bottom: 10px;
+        }
+
+        .notes h5, .terms h5 {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row header-section">
+            <div class="col-xs-8">
+                <div class="logo">
+                    <img src="logo.jpg" alt="Logo">
+                </div>
+            </div>
+           
+            <div class="col-xs-4 text-right rightdetails">
+                <h1>INVOICE</h1>
+                <p style="font-weight: bold;" id="invoiceno">#</p>
+                <p>Balance Due</p>
+                <p style="font-weight: bold;" id="balancedue">$</p>
+            </div>
+            <div class="col-xs-7 company-details">
+              <h4>Zylker Design Labs</h4>
+              <p>14B, Northern Street</p>
+              <p>Greater South Avenue</p>
+              <p>New York, New York 10001</p>
+              <p>U.S.A</p>
+          </div>
+        </div>
+
+        <div class="row from-to-section">
+            <div class="col-xs-12 col-md-12 from">
+                <h4>Bill To</h4>
+                <p id="name">John Doe</p>
+                <p id="Address">3242 Chandler Hollow Road</p>
+                <p id="cityState">Pittsburgh, PA</p>
+                <p id="zipCode">15222</p>
+            </div>
+            <div class="col-xs-12 col-md-6 to">
+                <h4>Ship To</h4>
+                <p id="shipName">Jane Smith</p>
+                <p id="shipAddress">1200 Elm Street</p>
+                <p id="shipCityState">Los Angeles, CA</p>
+                <p id="shipZipCode">90001</p>
+            </div>
+            <div class="col-xs-12 text-right invoice-info">
+                <p>Invoice Date: <span id="invoiceDate">18 May 2023</span></p>
+                <p>Terms: Due on Receipt</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 invoice-table">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Item & Description</th>
+                            <th>Qty</th>
+                            <th>Rate</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemRows">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-6">
+                <table class="table total-summary">
+                    <tr>
+                        <td class="label">Sub Total</td>
+                        <td id="subtotal">$</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Tax Rate</td>
+                        <td id="gst">$</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Total</td>
+                        <td id="totalamount">$</td>
+                    </tr>
+                    <tr>
+                        <td class="label1"><strong>Balance Due</strong></td>
+                        <td id="balance"><h6>$</h6></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row notes">
+            <div class="col-xs-12">
+                <h4>Notes</h4>
+                <p>Thanks for your business.</p>
+            </div>
+        </div>
+
+        <div class="row terms">
+            <div class="col-xs-12">
+                <h4>Terms & Condition</h4>
+                <p>All payments must be made in full before the commencement of any design work.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var invoiceData = {
+            billNo: "INV-12345",
+            name: "John Doe",
+            address: "3242 Chandler Hollow Road",
+            city: "Pittsburgh",
+            zip: "15222",
+            invoiceDate: "18 May 2023",
+            gst: 18,
+            totalAmount: 500,
+            items: [
+                { description: "Web Design Service", qty: 2, rate: 100, amount: 200 },
+                { description: "Logo Design", qty: 1, rate: 300, amount: 300 }
+            ]
+        };
+
+        document.getElementById('invoiceno').innerText = invoiceData.billNo;
+        document.getElementById('name').innerText = invoiceData.name;
+        document.getElementById('Address').innerText = invoiceData.address;
+        document.getElementById('cityState').innerText = invoiceData.city;
+        document.getElementById('zipCode').innerText = invoiceData.zip;
+        document.getElementById('invoiceDate').innerText = invoiceData.invoiceDate;
+        
+        var itemRows = '';
+        invoiceData.items.forEach((item, index) => {
+            itemRows += `<tr>
+                            <td>${index + 1}</td>
+                            <td>${item.description}</td>
+                            <td>${item.qty}</td>
+                            <td>$${item.rate}</td>
+                            <td>$${item.amount}</td>
+                         </tr>`;
+        });
+        document.getElementById('itemRows').innerHTML = itemRows;
+
+        document.getElementById('gst').innerText = `${invoiceData.gst}%`;
+        document.getElementById('subtotal').innerText = `$${invoiceData.totalAmount}`;
+        var totalWithTax = invoiceData.totalAmount + (invoiceData.totalAmount * invoiceData.gst / 100);
+        document.getElementById('totalamount').innerText = `$${totalWithTax.toFixed(2)}`;
+
+        document.getElementById('balancedue').innerText = `$${totalWithTax.toFixed(2)}`;
+        document.getElementById('balance').innerText = `$${totalWithTax.toFixed(2)}`;
+    </script>
+</body>
+</html>
