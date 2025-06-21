@@ -1,0 +1,120 @@
+
+    body {
+      font-family:  'Gill Sans', sans-serif, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid rgb(254, 254, 254);
+      border-radius: 10px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: right;
+      background-color: #5639ca;
+      padding: 20px;
+      color: white;
+      text-align: right;
+
+    }
+
+    .header h1 {
+      margin-left: 18pc;
+      margin-bottom: 0%;
+      margin-top: 0%;
+      text-align: right;
+      font-size: 36px;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .business-info,
+    .bill-info,
+    .shipping-info,
+    .table-container,
+    .bank-details,
+    .summary {
+      margin-top: 20px;
+    }
+
+    .info-section {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .info-column {
+      width: 45%;
+    }
+
+    .info-column label {
+      font-weight: bold;
+    }
+
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-container table, 
+    .table-container th, 
+    .table-container td {
+      border: 1px solid #5639ca;
+    }
+
+    .table-container th, .table-container td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .table-container th {
+      background-color: #5639ca;
+      color: white;
+    }
+
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .left-summary {
+      width: 47%;
+    }
+
+    .right-summary {
+      width: 53%;
+    }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .summary-table td {
+      padding: 5px;
+      border: 1px solid #5639ca;
+      font-size: 15px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: #333;
+    }
+
+    .footer img {
+      margin: 10px;
+    }

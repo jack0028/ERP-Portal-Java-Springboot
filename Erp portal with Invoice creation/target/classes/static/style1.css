@@ -1,0 +1,181 @@
+
+        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #636363;
+}
+
+.container {
+  width: 800px;
+  margin: 4pc auto;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.header-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ec7019;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.company-details {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-top: -25px;
+}
+
+.company-details h4 {
+  color: #c01600;
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.company-details p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.rightdetails {
+  text-align: right;
+  margin-left: auto;
+}
+.rightdetails h1{
+  color: #c01600;
+  font-size: 28px;
+  margin: 0%;
+}
+
+
+h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #c01600;
+}
+
+.clearfix {
+  clear: both;
+}
+.from-to-section {
+  margin-top: 4pc;
+  display: block; /* Stack the sections vertically */
+}
+
+.from, .to {
+  width: 100%; /* Make both sections full width */
+  margin-top: 20px; /* Add some space between Bill To and Ship To */
+}
+
+.from h4, .to h4 {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.from p, .to p {
+  margin: 2px 0;
+  font-size: 12px;
+}
+
+.invoice-info {
+  text-align: right;
+  font-size: 14px;
+  margin-top: -30px;
+}
+
+.invoice-table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.invoice-table th, .invoice-table td {
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  border: none;
+}
+
+.invoice-table tbody {
+  background-color: #f8f8f8;
+}
+
+.invoice-table th {
+  background-color: #c01600;
+  font-weight: bold;
+  color: #fdfdfd;
+  border-bottom: 1px solid #ddd;
+}
+
+.invoice-table tr:first-child th {
+  border-top: 1px solid #443d3d;
+}
+.total-summary {
+  width: 50%;
+  float: right;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.total-summary td {
+  padding: 5px;
+  text-align: right;
+  font-size: 13px;
+}
+
+.total-summary .label {
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.total-summary tr {
+  border-bottom: 1px solid #ffffff;
+}
+.total-summary .label1{
+  text-align: center;
+}
+
+.total-summary tr:last-child {
+  border-bottom: none;
+  background-color: #c01600;
+  color: #fff;
+}
+
+
+
+.notes {
+  margin-top: 15pc;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.notes h5, .terms h5{
+  font-weight: bold;
+}
+.terms{
+  margin-top: 2pc;
+  margin-bottom: 10px;
+}
+
+
+.notes p, .terms p {
+  margin: 0;
+}
